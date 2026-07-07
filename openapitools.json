@@ -8,7 +8,7 @@
         "generatorName": "go",
         "inputSpec": "openapi.yaml",
         "output": ".",
-        "additionalProperties": { "packageName": "cryptogate", "isGoSubmodule": "false", "enumClassPrefix": "true", "gitUserId": "CryptoGateHQ", "gitRepoId": "go-sdk" }
+        "additionalProperties": { "packageName": "griffnode", "isGoSubmodule": "false", "enumClassPrefix": "true", "gitUserId": "CryptoGateHQ", "gitRepoId": "go-sdk" }
       }
     }
   }

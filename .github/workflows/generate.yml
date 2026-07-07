@@ -17,7 +17,7 @@ jobs:
             openapitools/openapi-generator-cli:v7.10.0 \
             generate -i /local/openapi.yaml -g go -o /local \
             --skip-validate-spec \
-            --additional-properties=packageName=cryptogate,isGoSubmodule=false,enumClassPrefix=true,gitUserId=CryptoGateHQ,gitRepoId=go-sdk
+            --additional-properties=packageName=griffnode,isGoSubmodule=false,enumClassPrefix=true,gitUserId=CryptoGateHQ,gitRepoId=go-sdk
       - name: Commit regenerated SDK
         run: |
           git config user.name  "github-actions[bot]"
