@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Txid** | Pointer to **string** | On-chain transaction hash (blockchain id, NOT the CryptoGate transaction_id). | [optional] 
+**Txid** | Pointer to **string** | On-chain transaction hash (blockchain id, NOT the GriffNode transaction_id). | [optional] 
 **AmountCrypto** | Pointer to **float32** |  | [optional] 
 **Confirmations** | Pointer to **int32** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 

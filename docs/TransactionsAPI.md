@@ -1,6 +1,6 @@
 # \TransactionsAPI
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

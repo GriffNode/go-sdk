@@ -1,13 +1,13 @@
 # \AccountAPI
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAccount**](AccountAPI.md#GetAccount) | **Get** /account | Merchant plan, usage and limits
 [**GetStats**](AccountAPI.md#GetStats) | **Get** /stats | Merchant transaction analytics
 [**ListBalances**](AccountAPI.md#ListBalances) | **Get** /balances | On-platform balances (for overage/top-up; NOT crypto settlement)
-[**ListInvoices**](AccountAPI.md#ListInvoices) | **Get** /invoices | CryptoGate billing invoices (platform ↔ merchant)
+[**ListInvoices**](AccountAPI.md#ListInvoices) | **Get** /invoices | GriffNode billing invoices (platform ↔ merchant)
 [**ListPlans**](AccountAPI.md#ListPlans) | **Get** /plans | Plan catalogue and pricing
 
 
@@ -193,7 +193,7 @@ Other parameters are passed through a pointer to a apiListBalancesRequest struct
 
 > ListInvoices200Response ListInvoices(ctx).Limit(limit).Offset(offset).Execute()
 
-CryptoGate billing invoices (platform ↔ merchant)
+GriffNode billing invoices (platform ↔ merchant)
 
 ### Example
 
