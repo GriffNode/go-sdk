@@ -5,7 +5,7 @@ accept Bitcoin, Ethereum, Litecoin, Dogecoin, Dash and ERC-20 tokens straight to
 own wallet.
 
 ```
-go get github.com/CryptoGateHQ/go-sdk
+go get github.com/GriffNode/go-sdk
 ```
 
 - **API reference:** https://docs.griffnode.com/reference

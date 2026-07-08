@@ -17,7 +17,9 @@ jobs:
             openapitools/openapi-generator-cli:v7.10.0 \
             generate -i /local/openapi.yaml -g go -o /local \
             --skip-validate-spec \
-            --additional-properties=packageName=griffnode,isGoSubmodule=false,enumClassPrefix=true,gitUserId=CryptoGateHQ,gitRepoId=go-sdk
+            --additional-properties=packageName=griffnode,isGoSubmodule=false,enumClassPrefix=true,gitUserId=GriffNode,gitRepoId=go-sdk
+      - name: Fix go.mod module path (generator leaves placeholder)
+        run: sed -i "s|github.com/GIT_USER_ID/GIT_REPO_ID|github.com/GriffNode/go-sdk|" go.mod
       - name: Commit regenerated SDK
         run: |
           git config user.name  "github-actions[bot]"
