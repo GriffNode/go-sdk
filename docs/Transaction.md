@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TransactionId** | **string** |  | 
 **Status** | [**TransactionStatus**](TransactionStatus.md) |  | 
+**Exception** | Pointer to [**TransactionException**](TransactionException.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Crypto** | [**CryptoSymbol**](CryptoSymbol.md) |  | 
 **DepositAddress** | Pointer to **string** |  | [optional] 
@@ -88,6 +89,31 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+
+### GetException
+
+`func (o *Transaction) GetException() TransactionException`
+
+GetException returns the Exception field if non-nil, zero value otherwise.
+
+### GetExceptionOk
+
+`func (o *Transaction) GetExceptionOk() (*TransactionException, bool)`
+
+GetExceptionOk returns a tuple with the Exception field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetException
+
+`func (o *Transaction) SetException(v TransactionException)`
+
+SetException sets Exception field to given value.
+
+### HasException
+
+`func (o *Transaction) HasException() bool`
+
+HasException returns a boolean if a field has been set.
 
 ### GetType
 

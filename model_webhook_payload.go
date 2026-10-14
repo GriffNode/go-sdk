@@ -26,6 +26,7 @@ type WebhookPayload struct {
 	Timestamp time.Time `json:"timestamp"`
 	TransactionId string `json:"transaction_id"`
 	Status TransactionStatus `json:"status"`
+	Exception *TransactionException `json:"exception,omitempty"`
 	CurrencyCrypto *CryptoSymbol `json:"currency_crypto,omitempty"`
 	CurrencyFiat *FiatCurrency `json:"currency_fiat,omitempty"`
 	// Decimal string.
@@ -162,6 +163,38 @@ func (o *WebhookPayload) GetStatusOk() (*TransactionStatus, bool) {
 // SetStatus sets field value
 func (o *WebhookPayload) SetStatus(v TransactionStatus) {
 	o.Status = v
+}
+
+// GetException returns the Exception field value if set, zero value otherwise.
+func (o *WebhookPayload) GetException() TransactionException {
+	if o == nil || IsNil(o.Exception) {
+		var ret TransactionException
+		return ret
+	}
+	return *o.Exception
+}
+
+// GetExceptionOk returns a tuple with the Exception field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WebhookPayload) GetExceptionOk() (*TransactionException, bool) {
+	if o == nil || IsNil(o.Exception) {
+		return nil, false
+	}
+	return o.Exception, true
+}
+
+// HasException returns a boolean if a field has been set.
+func (o *WebhookPayload) HasException() bool {
+	if o != nil && !IsNil(o.Exception) {
+		return true
+	}
+
+	return false
+}
+
+// SetException gets a reference to the given TransactionException and assigns it to the Exception field.
+func (o *WebhookPayload) SetException(v TransactionException) {
+	o.Exception = &v
 }
 
 // GetCurrencyCrypto returns the CurrencyCrypto field value if set, zero value otherwise.
@@ -454,6 +487,9 @@ func (o WebhookPayload) ToMap() (map[string]interface{}, error) {
 	toSerialize["timestamp"] = o.Timestamp
 	toSerialize["transaction_id"] = o.TransactionId
 	toSerialize["status"] = o.Status
+	if !IsNil(o.Exception) {
+		toSerialize["exception"] = o.Exception
+	}
 	if !IsNil(o.CurrencyCrypto) {
 		toSerialize["currency_crypto"] = o.CurrencyCrypto
 	}

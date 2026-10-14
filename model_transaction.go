@@ -24,6 +24,7 @@ var _ MappedNullable = &Transaction{}
 type Transaction struct {
 	TransactionId string `json:"transaction_id"`
 	Status TransactionStatus `json:"status"`
+	Exception *TransactionException `json:"exception,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Crypto CryptoSymbol `json:"crypto"`
 	DepositAddress *string `json:"deposit_address,omitempty"`
@@ -127,6 +128,38 @@ func (o *Transaction) GetStatusOk() (*TransactionStatus, bool) {
 // SetStatus sets field value
 func (o *Transaction) SetStatus(v TransactionStatus) {
 	o.Status = v
+}
+
+// GetException returns the Exception field value if set, zero value otherwise.
+func (o *Transaction) GetException() TransactionException {
+	if o == nil || IsNil(o.Exception) {
+		var ret TransactionException
+		return ret
+	}
+	return *o.Exception
+}
+
+// GetExceptionOk returns a tuple with the Exception field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetExceptionOk() (*TransactionException, bool) {
+	if o == nil || IsNil(o.Exception) {
+		return nil, false
+	}
+	return o.Exception, true
+}
+
+// HasException returns a boolean if a field has been set.
+func (o *Transaction) HasException() bool {
+	if o != nil && !IsNil(o.Exception) {
+		return true
+	}
+
+	return false
+}
+
+// SetException gets a reference to the given TransactionException and assigns it to the Exception field.
+func (o *Transaction) SetException(v TransactionException) {
+	o.Exception = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -870,6 +903,9 @@ func (o Transaction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["transaction_id"] = o.TransactionId
 	toSerialize["status"] = o.Status
+	if !IsNil(o.Exception) {
+		toSerialize["exception"] = o.Exception
+	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}

@@ -51,6 +51,7 @@ docs/PlanTier.md
 docs/SystemAPI.md
 docs/Transaction.md
 docs/TransactionEnvelope.md
+docs/TransactionException.md
 docs/TransactionStatus.md
 docs/TransactionsAPI.md
 docs/WebhookPayload.md
@@ -95,6 +96,7 @@ model_plan.go
 model_plan_tier.go
 model_transaction.go
 model_transaction_envelope.go
+model_transaction_exception.go
 model_transaction_status.go
 model_webhook_payload.go
 response.go

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Timestamp** | **time.Time** |  | 
 **TransactionId** | **string** |  | 
 **Status** | [**TransactionStatus**](TransactionStatus.md) |  | 
+**Exception** | Pointer to [**TransactionException**](TransactionException.md) |  | [optional] 
 **CurrencyCrypto** | Pointer to [**CryptoSymbol**](CryptoSymbol.md) |  | [optional] 
 **CurrencyFiat** | Pointer to [**FiatCurrency**](FiatCurrency.md) |  | [optional] [default to FIATCURRENCY_USD]
 **AmountFiat** | Pointer to **string** | Decimal string. | [optional] 
@@ -115,6 +116,31 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+
+### GetException
+
+`func (o *WebhookPayload) GetException() TransactionException`
+
+GetException returns the Exception field if non-nil, zero value otherwise.
+
+### GetExceptionOk
+
+`func (o *WebhookPayload) GetExceptionOk() (*TransactionException, bool)`
+
+GetExceptionOk returns a tuple with the Exception field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetException
+
+`func (o *WebhookPayload) SetException(v TransactionException)`
+
+SetException sets Exception field to given value.
+
+### HasException
+
+`func (o *WebhookPayload) HasException() bool`
+
+HasException returns a boolean if a field has been set.
 
 ### GetCurrencyCrypto
 
