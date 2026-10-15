@@ -48,6 +48,7 @@ docs/Pagination.md
 docs/PaymentSplit.md
 docs/Plan.md
 docs/PlanTier.md
+docs/RecurringWebhookPayload.md
 docs/SystemAPI.md
 docs/Transaction.md
 docs/TransactionEnvelope.md
@@ -94,6 +95,7 @@ model_pagination.go
 model_payment_split.go
 model_plan.go
 model_plan_tier.go
+model_recurring_webhook_payload.go
 model_transaction.go
 model_transaction_envelope.go
 model_transaction_exception.go
