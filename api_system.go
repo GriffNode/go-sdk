@@ -125,6 +125,7 @@ type ApiHostedCheckoutRedirectRequest struct {
 	pk *string
 	amount *string
 	crypto *CryptoSymbol
+	currency *string
 	link *string
 }
 
@@ -145,7 +146,13 @@ func (r ApiHostedCheckoutRedirectRequest) Crypto(crypto CryptoSymbol) ApiHostedC
 	return r
 }
 
-// Payment-link slug for attribution.
+// Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency.
+func (r ApiHostedCheckoutRedirectRequest) Currency(currency string) ApiHostedCheckoutRedirectRequest {
+	r.currency = &currency
+	return r
+}
+
+// Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid).
 func (r ApiHostedCheckoutRedirectRequest) Link(link string) ApiHostedCheckoutRedirectRequest {
 	r.link = &link
 	return r
@@ -202,6 +209,12 @@ func (a *SystemAPIService) HostedCheckoutRedirectExecute(r ApiHostedCheckoutRedi
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pk", r.pk, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "amount", r.amount, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "crypto", r.crypto, "form", "")
+	if r.currency != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "currency", r.currency, "form", "")
+	} else {
+		var defaultValue string = "USD"
+		r.currency = &defaultValue
+	}
 	if r.link != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "link", r.link, "form", "")
 	}

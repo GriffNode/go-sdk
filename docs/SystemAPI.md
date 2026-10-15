@@ -70,7 +70,7 @@ No authorization required
 
 ## HostedCheckoutRedirect
 
-> HostedCheckoutRedirect(ctx).Pk(pk).Amount(amount).Crypto(crypto).Link(link).Execute()
+> HostedCheckoutRedirect(ctx).Pk(pk).Amount(amount).Crypto(crypto).Currency(currency).Link(link).Execute()
 
 Hosted-checkout redirect (browser flow, publishable key)
 
@@ -92,11 +92,12 @@ func main() {
 	pk := "pk_example" // string | Publishable key, pk_live_… / pk_test_…
 	amount := "amount_example" // string | Fiat amount (≥ 1.00 USD equivalent).
 	crypto := openapiclient.CryptoSymbol("BTC") // CryptoSymbol | 
-	link := "link_example" // string | Payment-link slug for attribution. (optional)
+	currency := "currency_example" // string | Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency. (optional) (default to "USD")
+	link := "link_example" // string | Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SystemAPI.HostedCheckoutRedirect(context.Background()).Pk(pk).Amount(amount).Crypto(crypto).Link(link).Execute()
+	r, err := apiClient.SystemAPI.HostedCheckoutRedirect(context.Background()).Pk(pk).Amount(amount).Crypto(crypto).Currency(currency).Link(link).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.HostedCheckoutRedirect``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,7 +119,8 @@ Name | Type | Description  | Notes
  **pk** | **string** | Publishable key, pk_live_… / pk_test_… | 
  **amount** | **string** | Fiat amount (≥ 1.00 USD equivalent). | 
  **crypto** | [**CryptoSymbol**](CryptoSymbol.md) |  | 
- **link** | **string** | Payment-link slug for attribution. | 
+ **currency** | **string** | Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. | [default to &quot;USD&quot;]
+ **link** | **string** | Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). | 
 
 ### Return type
 
