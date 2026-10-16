@@ -27,6 +27,7 @@ const (
 	CRYPTOSYMBOL_ETH CryptoSymbol = "ETH"
 	CRYPTOSYMBOL_USDT CryptoSymbol = "USDT"
 	CRYPTOSYMBOL_USDC CryptoSymbol = "USDC"
+	CRYPTOSYMBOL_EURC CryptoSymbol = "EURC"
 	CRYPTOSYMBOL_DAI CryptoSymbol = "DAI"
 	CRYPTOSYMBOL_WBTC CryptoSymbol = "WBTC"
 	CRYPTOSYMBOL_SHIB CryptoSymbol = "SHIB"
@@ -46,6 +47,7 @@ var AllowedCryptoSymbolEnumValues = []CryptoSymbol{
 	"ETH",
 	"USDT",
 	"USDC",
+	"EURC",
 	"DAI",
 	"WBTC",
 	"SHIB",
