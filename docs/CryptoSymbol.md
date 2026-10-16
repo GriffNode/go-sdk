@@ -17,6 +17,8 @@
 
 * `USDC` (value: `"USDC"`)
 
+* `EURC` (value: `"EURC"`)
+
 * `DAI` (value: `"DAI"`)
 
 * `WBTC` (value: `"WBTC"`)
