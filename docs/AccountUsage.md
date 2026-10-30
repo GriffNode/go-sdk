@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MonthlyTransactionsUsed** | Pointer to **int32** |  | [optional] 
 **MonthlyTransactionLimit** | Pointer to **NullableInt32** | null &#x3D; unlimited. | [optional] 
-**OverageCostPerTx** | Pointer to **float32** |  | [optional] 
+**OverageCostPerTx** | Pointer to **float32** | Always 0. Plans have a hard monthly limit and no overage. | [optional] 
 
 ## Methods
 

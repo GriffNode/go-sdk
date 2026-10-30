@@ -38,7 +38,7 @@ func (r ApiCreateBillingCheckoutRequest) Execute() (*TransactionEnvelope, *http.
 }
 
 /*
-CreateBillingCheckout Start a plan upgrade or account top-up
+CreateBillingCheckout Start a plan upgrade
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateBillingCheckoutRequest
@@ -116,17 +116,6 @@ func (a *BillingAPIService) CreateBillingCheckoutExecute(r ApiCreateBillingCheck
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 402 {
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

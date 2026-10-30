@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **MonthlyPriceUsd** | Pointer to **NullableFloat32** |  | [optional] 
 **YearlyPriceUsd** | Pointer to **NullableFloat32** |  | [optional] 
 **MonthlyTransactionLimit** | Pointer to **NullableInt32** |  | [optional] 
-**OverageCostPerTx** | Pointer to **float32** |  | [optional] 
+**OverageCostPerTx** | Pointer to **float32** | Always 0. Plans have a hard monthly limit and no overage. | [optional] 
 **WebhookSupport** | Pointer to **bool** |  | [optional] 
 **WebhookLimit** | Pointer to **NullableInt32** |  | [optional] 
 **IpWhitelist** | Pointer to **bool** |  | [optional] 

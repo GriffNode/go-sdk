@@ -23,6 +23,8 @@ type Plan struct {
 	MonthlyPriceUsd NullableFloat32 `json:"monthly_price_usd,omitempty"`
 	YearlyPriceUsd NullableFloat32 `json:"yearly_price_usd,omitempty"`
 	MonthlyTransactionLimit NullableInt32 `json:"monthly_transaction_limit,omitempty"`
+	// Always 0. Plans have a hard monthly limit and no overage.
+	// Deprecated
 	OverageCostPerTx *float32 `json:"overage_cost_per_tx,omitempty"`
 	WebhookSupport *bool `json:"webhook_support,omitempty"`
 	WebhookLimit NullableInt32 `json:"webhook_limit,omitempty"`
@@ -208,6 +210,7 @@ func (o *Plan) UnsetMonthlyTransactionLimit() {
 }
 
 // GetOverageCostPerTx returns the OverageCostPerTx field value if set, zero value otherwise.
+// Deprecated
 func (o *Plan) GetOverageCostPerTx() float32 {
 	if o == nil || IsNil(o.OverageCostPerTx) {
 		var ret float32
@@ -218,6 +221,7 @@ func (o *Plan) GetOverageCostPerTx() float32 {
 
 // GetOverageCostPerTxOk returns a tuple with the OverageCostPerTx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Plan) GetOverageCostPerTxOk() (*float32, bool) {
 	if o == nil || IsNil(o.OverageCostPerTx) {
 		return nil, false
@@ -235,6 +239,7 @@ func (o *Plan) HasOverageCostPerTx() bool {
 }
 
 // SetOverageCostPerTx gets a reference to the given float32 and assigns it to the OverageCostPerTx field.
+// Deprecated
 func (o *Plan) SetOverageCostPerTx(v float32) {
 	o.OverageCostPerTx = &v
 }

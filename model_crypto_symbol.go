@@ -30,12 +30,12 @@ const (
 	CRYPTOSYMBOL_EURC CryptoSymbol = "EURC"
 	CRYPTOSYMBOL_DAI CryptoSymbol = "DAI"
 	CRYPTOSYMBOL_WBTC CryptoSymbol = "WBTC"
+	CRYPTOSYMBOL_WETH CryptoSymbol = "WETH"
 	CRYPTOSYMBOL_SHIB CryptoSymbol = "SHIB"
 	CRYPTOSYMBOL_PEPE CryptoSymbol = "PEPE"
 	CRYPTOSYMBOL_LINK CryptoSymbol = "LINK"
 	CRYPTOSYMBOL_UNI CryptoSymbol = "UNI"
-	CRYPTOSYMBOL_AAVE CryptoSymbol = "AAVE"
-	CRYPTOSYMBOL_MKR CryptoSymbol = "MKR"
+	CRYPTOSYMBOL_LEO CryptoSymbol = "LEO"
 )
 
 // All allowed values of CryptoSymbol enum
@@ -50,12 +50,12 @@ var AllowedCryptoSymbolEnumValues = []CryptoSymbol{
 	"EURC",
 	"DAI",
 	"WBTC",
+	"WETH",
 	"SHIB",
 	"PEPE",
 	"LINK",
 	"UNI",
-	"AAVE",
-	"MKR",
+	"LEO",
 }
 
 func (v *CryptoSymbol) UnmarshalJSON(src []byte) error {

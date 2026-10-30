@@ -268,10 +268,12 @@ func (r ApiListBalancesRequest) Execute() (*ListBalances200Response, *http.Respo
 }
 
 /*
-ListBalances On-platform balances (for overage/top-up; NOT crypto settlement)
+ListBalances Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListBalancesRequest
+
+Deprecated
 */
 func (a *AccountAPIService) ListBalances(ctx context.Context) ApiListBalancesRequest {
 	return ApiListBalancesRequest{
@@ -282,6 +284,7 @@ func (a *AccountAPIService) ListBalances(ctx context.Context) ApiListBalancesReq
 
 // Execute executes the request
 //  @return ListBalances200Response
+// Deprecated
 func (a *AccountAPIService) ListBalancesExecute(r ApiListBalancesRequest) (*ListBalances200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet

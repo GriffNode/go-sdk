@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAccount**](AccountAPI.md#GetAccount) | **Get** /account | Merchant plan, usage and limits
 [**GetStats**](AccountAPI.md#GetStats) | **Get** /stats | Merchant transaction analytics
-[**ListBalances**](AccountAPI.md#ListBalances) | **Get** /balances | On-platform balances (for overage/top-up; NOT crypto settlement)
+[**ListBalances**](AccountAPI.md#ListBalances) | **Get** /balances | Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 [**ListInvoices**](AccountAPI.md#ListInvoices) | **Get** /invoices | GriffNode billing invoices (platform ↔ merchant)
 [**ListPlans**](AccountAPI.md#ListPlans) | **Get** /plans | Plan catalogue and pricing
 
@@ -134,7 +134,7 @@ Other parameters are passed through a pointer to a apiGetStatsRequest struct via
 
 > ListBalances200Response ListBalances(ctx).Execute()
 
-On-platform balances (for overage/top-up; NOT crypto settlement)
+Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 
 ### Example
 

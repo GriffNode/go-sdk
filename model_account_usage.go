@@ -22,6 +22,8 @@ type AccountUsage struct {
 	MonthlyTransactionsUsed *int32 `json:"monthly_transactions_used,omitempty"`
 	// null = unlimited.
 	MonthlyTransactionLimit NullableInt32 `json:"monthly_transaction_limit,omitempty"`
+	// Always 0. Plans have a hard monthly limit and no overage.
+	// Deprecated
 	OverageCostPerTx *float32 `json:"overage_cost_per_tx,omitempty"`
 }
 
@@ -117,6 +119,7 @@ func (o *AccountUsage) UnsetMonthlyTransactionLimit() {
 }
 
 // GetOverageCostPerTx returns the OverageCostPerTx field value if set, zero value otherwise.
+// Deprecated
 func (o *AccountUsage) GetOverageCostPerTx() float32 {
 	if o == nil || IsNil(o.OverageCostPerTx) {
 		var ret float32
@@ -127,6 +130,7 @@ func (o *AccountUsage) GetOverageCostPerTx() float32 {
 
 // GetOverageCostPerTxOk returns a tuple with the OverageCostPerTx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *AccountUsage) GetOverageCostPerTxOk() (*float32, bool) {
 	if o == nil || IsNil(o.OverageCostPerTx) {
 		return nil, false
@@ -144,6 +148,7 @@ func (o *AccountUsage) HasOverageCostPerTx() bool {
 }
 
 // SetOverageCostPerTx gets a reference to the given float32 and assigns it to the OverageCostPerTx field.
+// Deprecated
 func (o *AccountUsage) SetOverageCostPerTx(v float32) {
 	o.OverageCostPerTx = &v
 }

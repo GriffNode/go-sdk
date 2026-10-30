@@ -4,7 +4,7 @@ All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateBillingCheckout**](BillingAPI.md#CreateBillingCheckout) | **Post** /billing/checkout | Start a plan upgrade or account top-up
+[**CreateBillingCheckout**](BillingAPI.md#CreateBillingCheckout) | **Post** /billing/checkout | Start a plan upgrade
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > TransactionEnvelope CreateBillingCheckout(ctx).CreateBillingCheckoutRequest(createBillingCheckoutRequest).Execute()
 
-Start a plan upgrade or account top-up
+Start a plan upgrade
 
 ### Example
 
